@@ -208,6 +208,8 @@ RUN apt-get update && apt-get install -y \
 && rm -rf /tmp/unit-$UNIT_VERSION \
 && apt-get remove --auto-remove -y  build-essential wget 
 
+ADD . /www
+
 EXPOSE 8000 8080 8300
 
 CMD ["/usr/sbin/unitd", "--no-daemon"]
